@@ -1,3 +1,61 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+  .clay-card {
+    @apply rounded-3xl border-4 border-white/60 bg-red-100 transition-colors duration-300 dark:border-slate-700/50 dark:bg-slate-900;
+    box-shadow:
+      12px 12px 24px rgba(165, 28, 48, 0.25),
+      -8px -8px 20px rgba(255, 255, 255, 0.8),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.6),
+      inset -4px -4px 8px rgba(165, 28, 48, 0.15);
+  }
+
+  .dark .clay-card {
+    box-shadow:
+      10px 10px 22px rgba(0, 0, 0, 0.6),
+      -6px -6px 16px rgba(51, 65, 85, 0.3),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.05),
+      inset -3px -3px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-primary {
+    @apply cursor-pointer rounded-2xl border-2 border-red-300/40 bg-red-600 font-black tracking-wide text-white transition-colors duration-200 active:scale-95 dark:bg-red-500;
+    box-shadow:
+      6px 6px 12px rgba(153, 27, 27, 0.4),
+      -4px -4px 10px rgba(239, 68, 68, 0.5),
+      inset 2px 2px 4px rgba(252, 165, 165, 0.5),
+      inset -2px -2px 4px rgba(127, 29, 29, 0.5);
+  }
+
+  .btn-primary:hover {
+    @apply bg-red-500 dark:bg-red-400;
+  }
+
+  .btn-secondary {
+    @apply cursor-pointer rounded-2xl border-2 border-yellow-200/60 bg-yellow-400 font-black tracking-wide text-slate-950 transition-colors duration-200 active:scale-95;
+    box-shadow:
+      6px 6px 12px rgba(202, 138, 4, 0.3),
+      -4px -4px 10px rgba(250, 204, 21, 0.6),
+      inset 2px 2px 4px rgba(254, 240, 138, 0.8),
+      inset -2px -2px 4px rgba(161, 98, 7, 0.4);
+  }
+
+  .btn-secondary:hover {
+    @apply bg-yellow-300;
+  }
+
+  .accent-badge {
+    @apply rounded-full bg-red-500 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-inner dark:bg-yellow-400 dark:text-slate-950;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

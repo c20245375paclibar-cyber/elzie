@@ -2,24 +2,27 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
-const name = "Elsie L. Paclibar";
-const position = "Web Developer";
+const { title = "Elsie L. Paclibar | Web Developer" } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{name} | {position}</title>
+		<title>{title}</title>
 	</head>
-	<body>
+	<body class="flex min-h-screen flex-col bg-red-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+		<div class="fixed left-0 top-0 z-[60] h-1 w-full bg-orange-100 dark:bg-slate-700">
+			<div id="progressBar" class="h-full w-full origin-left scale-x-0 bg-orange-500"></div>
+		</div>
 		<Header />
-		<main>
+		<main class="mx-auto w-full max-w-6xl flex-grow space-y-6 px-4 py-8 sm:px-6 lg:px-8">
 			<slot />
 		</main>
 		<Footer />
+		<script type="module">import "../scripts/animation.js";</script>
 	</body>
 </html>
