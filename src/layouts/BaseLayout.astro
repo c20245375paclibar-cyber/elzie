@@ -24,5 +24,10 @@ const { title = "Elsie L. Paclibar | Web Developer" } = Astro.props;
 		</main>
 		<Footer />
 		<script type="module">import "../scripts/animation.js";</script>
+		<script>
+            import { FallingLeaves } from "falling-leaves";
+
+            new FallingLeaves({ shapes: ["maple", "oak", "ginkgo", "birch", "oval"] });
+        </script>
 	</body>
 </html>
