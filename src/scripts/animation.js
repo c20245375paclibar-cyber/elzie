@@ -35,7 +35,7 @@ const intro = gsap.timeline({
   defaults: { duration: 0.3, ease: "power2.out" },
 });
 
-intro.from("nav a", { y: -20, stagger: 0.06 });
+intro.from("nav .nav-link", { y: -20, stagger: 0.06 });
 intro.from("main > section", { y: -60, ease: "bounce.out", stagger: 0.1 }, "-=0.2");
 intro.from(
   "main section .accent-badge",
